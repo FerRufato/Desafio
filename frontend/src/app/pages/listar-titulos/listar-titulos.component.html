@@ -1,0 +1,30 @@
+<h2>Lista de Títulos</h2>
+<button routerLink="/incluir">Novo Título</button>
+
+<table border="1" cellspacing="0" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Número</th>
+      <th>Devedor</th>
+      <th>Parcelas</th>
+      <th>Valor Original</th>
+      <th>Dias Atraso</th>
+      <th>Valor Atualizado</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let titulo of titulos">
+      <td>{{ titulo.numeroTitulo }}</td>
+      <td>{{ titulo.nomeDevedor }}</td>
+      <td>{{ titulo.quantidadeParcelas }}</td>
+      <td>{{ titulo.valorOriginal | currency: "BRL" }}</td>
+      <td>{{ titulo.diasEmAtraso }}</td>
+      <td>{{ titulo.valorAtualizado | currency: "BRL" }}</td>
+      <td>
+        <button (click)="editarTitulo(titulo.numeroTitulo)">Editar</button>
+        <button (click)="excluirTitulo(titulo.numeroTitulo)">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

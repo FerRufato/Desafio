@@ -1,0 +1,25 @@
+<h2>Editar Título</h2>
+
+<form [formGroup]="tituloForm" (ngSubmit)="salvarAlteracoes()">
+  <div>
+    <label>Número:</label>
+    <input formControlName="numeroTitulo" readonly />
+  </div>
+  <div>
+    <label>Nome do Devedor:</label>
+    <input formControlName="nomeDevedor" />
+  </div>
+  <div>
+    <label>CPF do Devedor:</label>
+    <input formControlName="cpfDevedor" />
+  </div>
+  <div>
+    <label>Juros (%):</label>
+    <input formControlName="porcentagemJuros" type="number" />
+  </div>
+  <div>
+    <label>Multa (%):</label>
+    <input formControlName="porcentagemMulta" type="number" />
+  </div>
+  <button type="submit">Salvar Alterações</button>
+</form>
